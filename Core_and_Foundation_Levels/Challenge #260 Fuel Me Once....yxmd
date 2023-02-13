@@ -1,0 +1,1626 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="318" width="108" height="360" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Inputs
+
+
+
+
+
+
+]]></Text>
+          <Font name="Segoe UI" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="426" width="84" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Card Pairings</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="510" width="84" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Fuel Type</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="594" width="84" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Fuel Prices</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="342" width="84" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Transactions</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="630" y="318" width="84" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Output
+
+
+
+
+
+]]></Text>
+          <Font name="Segoe UI" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="324" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text />
+          <Font name="Segoe UI" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+          <BG_Image>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</BG_Image>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="438" y="66" width="468" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Weekly Challenge #260</Text>
+          <Font name="Microsoft Sans Serif" size="16.2" style="0" />
+          <TextColor name="Gray" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="138" width="660" height="168" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Use the provided datasets to flag transactions that require further review. Transactions that exceed the (vehicle capacity * fuel price) should be flagged as level 2, while transactions that exceed 90% of the (vehicle capacity * fuel price) value should be flagged as level 1. 
+
+The Transactions dataset contains Fleet card numbers, Dates, and the amount of the transaction. The Card Pairings dataset contains the vehicle's ID number and the Fleet card assigned to that vehicle. The Fuel Type table contains the vehicle descriptions of fuel type and fuel capacity for ranges of vehicle IDs. The Fuel Prices dataset is a listing of average fuel prices by date for regular gasoline and diesel. ]]></Text>
+          <Font name="Microsoft Sans Serif" size="11.25" style="0" />
+          <TextColor name="Gray" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="642" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="8" />
+          <Fields>
+            <Field name="flag" />
+            <Field name="Van Number" />
+            <Field name="Date" />
+            <Field name="Amount" />
+            <Field name="PriceCheck" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1</c>
+              <c>54</c>
+              <c>2021-02-12</c>
+              <c>62.81</c>
+              <c>63.75</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>103</c>
+              <c>2021-01-01</c>
+              <c>66.48</c>
+              <c>71.28</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>103</c>
+              <c>2021-01-19</c>
+              <c>68.82</c>
+              <c>74.91</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>119</c>
+              <c>2021-01-03</c>
+              <c>68.37</c>
+              <c>71.94</c>
+            </r>
+            <r>
+              <c>1</c>
+              <c>124</c>
+              <c>2021-01-20</c>
+              <c>71.76</c>
+              <c>75.57</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>18</c>
+              <c>2021-01-05</c>
+              <c>66.45</c>
+              <c>59.5</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>55</c>
+              <c>2021-01-13</c>
+              <c>63.85</c>
+              <c>59.5</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>85</c>
+              <c>2021-02-13</c>
+              <c>67.26</c>
+              <c>63.75</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="66" />
+          <Fields>
+            <Field name="Van Number" />
+            <Field name="Card Number" />
+          </Fields>
+          <Data>
+            <r>
+              <c>6</c>
+              <c>0001424878448694</c>
+            </r>
+            <r>
+              <c>12</c>
+              <c>0008225324380890</c>
+            </r>
+            <r>
+              <c>15</c>
+              <c>0009166248651843</c>
+            </r>
+            <r>
+              <c>18</c>
+              <c>0017797313769068</c>
+            </r>
+            <r>
+              <c>24</c>
+              <c>0033096326196367</c>
+            </r>
+            <r>
+              <c>26</c>
+              <c>0050107203276372</c>
+            </r>
+            <r>
+              <c>32</c>
+              <c>0077754191644447</c>
+            </r>
+            <r>
+              <c>35</c>
+              <c>0084424274516903</c>
+            </r>
+            <r>
+              <c>39</c>
+              <c>0149927725053127</c>
+            </r>
+            <r>
+              <c>40</c>
+              <c>0173125226916013</c>
+            </r>
+            <r>
+              <c>41</c>
+              <c>0185553635533470</c>
+            </r>
+            <r>
+              <c>43</c>
+              <c>0186691126704685</c>
+            </r>
+            <r>
+              <c>44</c>
+              <c>0251477518051928</c>
+            </r>
+            <r>
+              <c>47</c>
+              <c>0444888335884258</c>
+            </r>
+            <r>
+              <c>49</c>
+              <c>0486485720241563</c>
+            </r>
+            <r>
+              <c>50</c>
+              <c>0634563546838416</c>
+            </r>
+            <r>
+              <c>52</c>
+              <c>0642512740106488</c>
+            </r>
+            <r>
+              <c>53</c>
+              <c>0651379375753384</c>
+            </r>
+            <r>
+              <c>54</c>
+              <c>0703368638009666</c>
+            </r>
+            <r>
+              <c>55</c>
+              <c>0814487286605687</c>
+            </r>
+            <r>
+              <c>56</c>
+              <c>0871757579646457</c>
+            </r>
+            <r>
+              <c>57</c>
+              <c>0955842181343612</c>
+            </r>
+            <r>
+              <c>58</c>
+              <c>1165791981725646</c>
+            </r>
+            <r>
+              <c>59</c>
+              <c>1593617996165345</c>
+            </r>
+            <r>
+              <c>62</c>
+              <c>1791759332109289</c>
+            </r>
+            <r>
+              <c>63</c>
+              <c>2052457862868733</c>
+            </r>
+            <r>
+              <c>66</c>
+              <c>2184430214515754</c>
+            </r>
+            <r>
+              <c>67</c>
+              <c>2343707230321271</c>
+            </r>
+            <r>
+              <c>68</c>
+              <c>2351772574466967</c>
+            </r>
+            <r>
+              <c>69</c>
+              <c>2872975641851317</c>
+            </r>
+            <r>
+              <c>70</c>
+              <c>3001771555642829</c>
+            </r>
+            <r>
+              <c>71</c>
+              <c>3274824635232551</c>
+            </r>
+            <r>
+              <c>72</c>
+              <c>3487399023971964</c>
+            </r>
+            <r>
+              <c>73</c>
+              <c>3681763762522500</c>
+            </r>
+            <r>
+              <c>74</c>
+              <c>3863576896894959</c>
+            </r>
+            <r>
+              <c>75</c>
+              <c>4444607387168101</c>
+            </r>
+            <r>
+              <c>78</c>
+              <c>4453890346891247</c>
+            </r>
+            <r>
+              <c>79</c>
+              <c>4551108946472022</c>
+            </r>
+            <r>
+              <c>82</c>
+              <c>4579323789024461</c>
+            </r>
+            <r>
+              <c>83</c>
+              <c>4606704884617470</c>
+            </r>
+            <r>
+              <c>84</c>
+              <c>4725218665812474</c>
+            </r>
+            <r>
+              <c>85</c>
+              <c>4987815395411850</c>
+            </r>
+            <r>
+              <c>87</c>
+              <c>5084493177386431</c>
+            </r>
+            <r>
+              <c>90</c>
+              <c>5192450694901179</c>
+            </r>
+            <r>
+              <c>91</c>
+              <c>5226957587751530</c>
+            </r>
+            <r>
+              <c>96</c>
+              <c>5282860928265596</c>
+            </r>
+            <r>
+              <c>97</c>
+              <c>5469328985781066</c>
+            </r>
+            <r>
+              <c>98</c>
+              <c>5730316697454595</c>
+            </r>
+            <r>
+              <c>100</c>
+              <c>6204753376934756</c>
+            </r>
+            <r>
+              <c>102</c>
+              <c>6234104517005484</c>
+            </r>
+            <r>
+              <c>103</c>
+              <c>6251963399796255</c>
+            </r>
+            <r>
+              <c>104</c>
+              <c>6267868190937507</c>
+            </r>
+            <r>
+              <c>107</c>
+              <c>7279873795746083</c>
+            </r>
+            <r>
+              <c>108</c>
+              <c>7457904464422969</c>
+            </r>
+            <r>
+              <c>112</c>
+              <c>7756493893196676</c>
+            </r>
+            <r>
+              <c>117</c>
+              <c>7907345435269574</c>
+            </r>
+            <r>
+              <c>119</c>
+              <c>8193120958099742</c>
+            </r>
+            <r>
+              <c>123</c>
+              <c>8246393146253933</c>
+            </r>
+            <r>
+              <c>124</c>
+              <c>8344190579338434</c>
+            </r>
+            <r>
+              <c>125</c>
+              <c>8370399840876032</c>
+            </r>
+            <r>
+              <c>126</c>
+              <c>8412270250622072</c>
+            </r>
+            <r>
+              <c>127</c>
+              <c>9033998253796525</c>
+            </r>
+            <r>
+              <c>128</c>
+              <c>9054937372368794</c>
+            </r>
+            <r>
+              <c>133</c>
+              <c>9543640566075967</c>
+            </r>
+            <r>
+              <c>138</c>
+              <c>9603184265166798</c>
+            </r>
+            <r>
+              <c>141</c>
+              <c>9855392114361673</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="2" />
+          <Fields>
+            <Field name="Van Number" />
+            <Field name="Type" />
+            <Field name="Capacity" />
+          </Fields>
+          <Data>
+            <r>
+              <c>0-99</c>
+              <c>Diesel</c>
+              <c>25.0</c>
+            </r>
+            <r>
+              <c>100-999</c>
+              <c>Gas</c>
+              <c>33.0</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="45">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="59" />
+          <Fields>
+            <Field name="Date" />
+            <Field name="Regular" />
+            <Field name="Diesel" />
+          </Fields>
+          <Data>
+            <r>
+              <c>2021-01-01</c>
+              <c>2.16</c>
+              <c>2.33</c>
+            </r>
+            <r>
+              <c>2021-01-02</c>
+              <c>2.18</c>
+              <c>2.33</c>
+            </r>
+            <r>
+              <c>2021-01-03</c>
+              <c>2.18</c>
+              <c>2.34</c>
+            </r>
+            <r>
+              <c>2021-01-04</c>
+              <c>2.26</c>
+              <c>2.36</c>
+            </r>
+            <r>
+              <c>2021-01-05</c>
+              <c>2.25</c>
+              <c>2.38</c>
+            </r>
+            <r>
+              <c>2021-01-06</c>
+              <c>2.24</c>
+              <c>2.41</c>
+            </r>
+            <r>
+              <c>2021-01-07</c>
+              <c>2.24</c>
+              <c>2.40</c>
+            </r>
+            <r>
+              <c>2021-01-08</c>
+              <c>2.27</c>
+              <c>2.40</c>
+            </r>
+            <r>
+              <c>2021-01-09</c>
+              <c>2.27</c>
+              <c>2.38</c>
+            </r>
+            <r>
+              <c>2021-01-10</c>
+              <c>2.28</c>
+              <c>2.36</c>
+            </r>
+            <r>
+              <c>2021-01-11</c>
+              <c>2.28</c>
+              <c>2.34</c>
+            </r>
+            <r>
+              <c>2021-01-12</c>
+              <c>2.31</c>
+              <c>2.34</c>
+            </r>
+            <r>
+              <c>2021-01-13</c>
+              <c>2.33</c>
+              <c>2.38</c>
+            </r>
+            <r>
+              <c>2021-01-14</c>
+              <c>2.35</c>
+              <c>2.42</c>
+            </r>
+            <r>
+              <c>2021-01-15</c>
+              <c>2.36</c>
+              <c>2.46</c>
+            </r>
+            <r>
+              <c>2021-01-16</c>
+              <c>2.34</c>
+              <c>2.48</c>
+            </r>
+            <r>
+              <c>2021-01-17</c>
+              <c>2.31</c>
+              <c>2.49</c>
+            </r>
+            <r>
+              <c>2021-01-18</c>
+              <c>2.27</c>
+              <c>2.49</c>
+            </r>
+            <r>
+              <c>2021-01-19</c>
+              <c>2.27</c>
+              <c>2.45</c>
+            </r>
+            <r>
+              <c>2021-01-20</c>
+              <c>2.29</c>
+              <c>2.44</c>
+            </r>
+            <r>
+              <c>2021-01-21</c>
+              <c>2.31</c>
+              <c>2.44</c>
+            </r>
+            <r>
+              <c>2021-01-22</c>
+              <c>2.31</c>
+              <c>2.43</c>
+            </r>
+            <r>
+              <c>2021-01-23</c>
+              <c>2.33</c>
+              <c>2.42</c>
+            </r>
+            <r>
+              <c>2021-01-24</c>
+              <c>2.34</c>
+              <c>2.45</c>
+            </r>
+            <r>
+              <c>2021-01-25</c>
+              <c>2.35</c>
+              <c>2.47</c>
+            </r>
+            <r>
+              <c>2021-01-26</c>
+              <c>2.35</c>
+              <c>2.47</c>
+            </r>
+            <r>
+              <c>2021-01-27</c>
+              <c>2.36</c>
+              <c>2.49</c>
+            </r>
+            <r>
+              <c>2021-01-28</c>
+              <c>2.36</c>
+              <c>2.48</c>
+            </r>
+            <r>
+              <c>2021-01-29</c>
+              <c>2.38</c>
+              <c>2.51</c>
+            </r>
+            <r>
+              <c>2021-01-30</c>
+              <c>2.34</c>
+              <c>2.50</c>
+            </r>
+            <r>
+              <c>2021-01-31</c>
+              <c>2.35</c>
+              <c>2.50</c>
+            </r>
+            <r>
+              <c>2021-02-01</c>
+              <c>2.36</c>
+              <c>2.46</c>
+            </r>
+            <r>
+              <c>2021-02-02</c>
+              <c>2.36</c>
+              <c>2.45</c>
+            </r>
+            <r>
+              <c>2021-02-03</c>
+              <c>2.31</c>
+              <c>2.45</c>
+            </r>
+            <r>
+              <c>2021-02-04</c>
+              <c>2.28</c>
+              <c>2.48</c>
+            </r>
+            <r>
+              <c>2021-02-05</c>
+              <c>2.29</c>
+              <c>2.50</c>
+            </r>
+            <r>
+              <c>2021-02-06</c>
+              <c>2.32</c>
+              <c>2.52</c>
+            </r>
+            <r>
+              <c>2021-02-07</c>
+              <c>2.33</c>
+              <c>2.53</c>
+            </r>
+            <r>
+              <c>2021-02-08</c>
+              <c>2.35</c>
+              <c>2.53</c>
+            </r>
+            <r>
+              <c>2021-02-09</c>
+              <c>2.38</c>
+              <c>2.55</c>
+            </r>
+            <r>
+              <c>2021-02-10</c>
+              <c>2.39</c>
+              <c>2.55</c>
+            </r>
+            <r>
+              <c>2021-02-11</c>
+              <c>2.41</c>
+              <c>2.53</c>
+            </r>
+            <r>
+              <c>2021-02-12</c>
+              <c>2.41</c>
+              <c>2.55</c>
+            </r>
+            <r>
+              <c>2021-02-13</c>
+              <c>2.42</c>
+              <c>2.55</c>
+            </r>
+            <r>
+              <c>2021-02-14</c>
+              <c>2.43</c>
+              <c>2.56</c>
+            </r>
+            <r>
+              <c>2021-02-15</c>
+              <c>2.44</c>
+              <c>2.58</c>
+            </r>
+            <r>
+              <c>2021-02-16</c>
+              <c>2.45</c>
+              <c>2.56</c>
+            </r>
+            <r>
+              <c>2021-02-17</c>
+              <c>2.44</c>
+              <c>2.57</c>
+            </r>
+            <r>
+              <c>2021-02-18</c>
+              <c>2.46</c>
+              <c>2.58</c>
+            </r>
+            <r>
+              <c>2021-02-19</c>
+              <c>2.48</c>
+              <c>2.59</c>
+            </r>
+            <r>
+              <c>2021-02-20</c>
+              <c>2.48</c>
+              <c>2.61</c>
+            </r>
+            <r>
+              <c>2021-02-21</c>
+              <c>2.50</c>
+              <c>2.63</c>
+            </r>
+            <r>
+              <c>2021-02-22</c>
+              <c>2.52</c>
+              <c>2.64</c>
+            </r>
+            <r>
+              <c>2021-02-23</c>
+              <c>2.53</c>
+              <c>2.66</c>
+            </r>
+            <r>
+              <c>2021-02-24</c>
+              <c>2.55</c>
+              <c>2.68</c>
+            </r>
+            <r>
+              <c>2021-02-25</c>
+              <c>2.58</c>
+              <c>2.71</c>
+            </r>
+            <r>
+              <c>2021-02-26</c>
+              <c>2.53</c>
+              <c>2.70</c>
+            </r>
+            <r>
+              <c>2021-02-27</c>
+              <c>2.50</c>
+              <c>2.66</c>
+            </r>
+            <r>
+              <c>2021-02-28</c>
+              <c>2.48</c>
+              <c>2.65</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="78" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="58" />
+          <Fields>
+            <Field name="Card Number" />
+            <Field name="Date" />
+            <Field name="Amount" />
+          </Fields>
+          <Data>
+            <r>
+              <c>0008225324380890</c>
+              <c>2021-02-06</c>
+              <c>49.93</c>
+            </r>
+            <r>
+              <c>0009166248651843</c>
+              <c>2021-01-24</c>
+              <c>32.8</c>
+            </r>
+            <r>
+              <c>0017797313769068</c>
+              <c>2021-01-05</c>
+              <c>66.45</c>
+            </r>
+            <r>
+              <c>0017797313769068</c>
+              <c>2021-01-15</c>
+              <c>49.24</c>
+            </r>
+            <r>
+              <c>0050107203276372</c>
+              <c>2021-01-08</c>
+              <c>25.84</c>
+            </r>
+            <r>
+              <c>0050107203276372</c>
+              <c>2021-01-12</c>
+              <c>48.57</c>
+            </r>
+            <r>
+              <c>0077754191644447</c>
+              <c>2021-02-27</c>
+              <c>54.8</c>
+            </r>
+            <r>
+              <c>0084424274516903</c>
+              <c>2021-01-27</c>
+              <c>49.29</c>
+            </r>
+            <r>
+              <c>0149927725053127</c>
+              <c>2021-01-22</c>
+              <c>39.57</c>
+            </r>
+            <r>
+              <c>0173125226916013</c>
+              <c>2021-02-19</c>
+              <c>28.71</c>
+            </r>
+            <r>
+              <c>0185553635533470</c>
+              <c>2021-02-23</c>
+              <c>47.42</c>
+            </r>
+            <r>
+              <c>0186691126704685</c>
+              <c>2021-02-04</c>
+              <c>39.25</c>
+            </r>
+            <r>
+              <c>0251477518051928</c>
+              <c>2021-01-25</c>
+              <c>52.88</c>
+            </r>
+            <r>
+              <c>0642512740106488</c>
+              <c>2021-02-08</c>
+              <c>37.5</c>
+            </r>
+            <r>
+              <c>0703368638009666</c>
+              <c>2021-02-12</c>
+              <c>62.81</c>
+            </r>
+            <r>
+              <c>0814487286605687</c>
+              <c>2021-01-07</c>
+              <c>51.8</c>
+            </r>
+            <r>
+              <c>0814487286605687</c>
+              <c>2021-01-13</c>
+              <c>63.85</c>
+            </r>
+            <r>
+              <c>0871757579646457</c>
+              <c>2021-02-15</c>
+              <c>30.34</c>
+            </r>
+            <r>
+              <c>1165791981725646</c>
+              <c>2021-02-24</c>
+              <c>56.23</c>
+            </r>
+            <r>
+              <c>2052457862868733</c>
+              <c>2021-01-23</c>
+              <c>31.75</c>
+            </r>
+            <r>
+              <c>2184430214515754</c>
+              <c>2021-02-22</c>
+              <c>38.55</c>
+            </r>
+            <r>
+              <c>2343707230321271</c>
+              <c>2021-02-16</c>
+              <c>32.54</c>
+            </r>
+            <r>
+              <c>2351772574466967</c>
+              <c>2021-02-07</c>
+              <c>41.39</c>
+            </r>
+            <r>
+              <c>2872975641851317</c>
+              <c>2021-02-17</c>
+              <c>42.9</c>
+            </r>
+            <r>
+              <c>3001771555642829</c>
+              <c>2021-02-25</c>
+              <c>57.78</c>
+            </r>
+            <r>
+              <c>3274824635232551</c>
+              <c>2021-01-06</c>
+              <c>36.43</c>
+            </r>
+            <r>
+              <c>3274824635232551</c>
+              <c>2021-01-14</c>
+              <c>44.96</c>
+            </r>
+            <r>
+              <c>3487399023971964</c>
+              <c>2021-02-05</c>
+              <c>26.1</c>
+            </r>
+            <r>
+              <c>3681763762522500</c>
+              <c>2021-02-28</c>
+              <c>50.64</c>
+            </r>
+            <r>
+              <c>3863576896894959</c>
+              <c>2021-01-02</c>
+              <c>49.44</c>
+            </r>
+            <r>
+              <c>3863576896894959</c>
+              <c>2021-01-18</c>
+              <c>45.47</c>
+            </r>
+            <r>
+              <c>4444607387168101</c>
+              <c>2021-02-01</c>
+              <c>54.45</c>
+            </r>
+            <r>
+              <c>4725218665812474</c>
+              <c>2021-01-09</c>
+              <c>43.55</c>
+            </r>
+            <r>
+              <c>4725218665812474</c>
+              <c>2021-01-11</c>
+              <c>47.19</c>
+            </r>
+            <r>
+              <c>4987815395411850</c>
+              <c>2021-02-13</c>
+              <c>67.26</c>
+            </r>
+            <r>
+              <c>5084493177386431</c>
+              <c>2021-02-20</c>
+              <c>50.7</c>
+            </r>
+            <r>
+              <c>5192450694901179</c>
+              <c>2021-02-18</c>
+              <c>33.54</c>
+            </r>
+            <r>
+              <c>5730316697454595</c>
+              <c>2021-01-29</c>
+              <c>27.1</c>
+            </r>
+            <r>
+              <c>6204753376934756</c>
+              <c>2021-01-28</c>
+              <c>52</c>
+            </r>
+            <r>
+              <c>6234104517005484</c>
+              <c>2021-01-26</c>
+              <c>56.24</c>
+            </r>
+            <r>
+              <c>6251963399796255</c>
+              <c>2021-01-01</c>
+              <c>66.48</c>
+            </r>
+            <r>
+              <c>6251963399796255</c>
+              <c>2021-01-19</c>
+              <c>68.82</c>
+            </r>
+            <r>
+              <c>6267868190937507</c>
+              <c>2021-02-02</c>
+              <c>53.54</c>
+            </r>
+            <r>
+              <c>7279873795746083</c>
+              <c>2021-01-31</c>
+              <c>67.75</c>
+            </r>
+            <r>
+              <c>7457904464422969</c>
+              <c>2021-02-14</c>
+              <c>56.43</c>
+            </r>
+            <r>
+              <c>7756493893196676</c>
+              <c>2021-01-21</c>
+              <c>43.84</c>
+            </r>
+            <r>
+              <c>7907345435269574</c>
+              <c>2021-01-04</c>
+              <c>50.36</c>
+            </r>
+            <r>
+              <c>7907345435269574</c>
+              <c>2021-01-16</c>
+              <c>67.76</c>
+            </r>
+            <r>
+              <c>8193120958099742</c>
+              <c>2021-01-03</c>
+              <c>68.37</c>
+            </r>
+            <r>
+              <c>8193120958099742</c>
+              <c>2021-01-17</c>
+              <c>60.33</c>
+            </r>
+            <r>
+              <c>8246393146253933</c>
+              <c>2021-02-26</c>
+              <c>45.34</c>
+            </r>
+            <r>
+              <c>8344190579338434</c>
+              <c>2021-01-20</c>
+              <c>71.76</c>
+            </r>
+            <r>
+              <c>8370399840876032</c>
+              <c>2021-02-11</c>
+              <c>45.51</c>
+            </r>
+            <r>
+              <c>8412270250622072</c>
+              <c>2021-02-09</c>
+              <c>51.75</c>
+            </r>
+            <r>
+              <c>9033998253796525</c>
+              <c>2021-01-30</c>
+              <c>56.97</c>
+            </r>
+            <r>
+              <c>9054937372368794</c>
+              <c>2021-02-21</c>
+              <c>50.34</c>
+            </r>
+            <r>
+              <c>9603184265166798</c>
+              <c>2021-02-03</c>
+              <c>53.45</c>
+            </r>
+            <r>
+              <c>9855392114361673</c>
+              <c>2021-02-10</c>
+              <c>48.35</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="174" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Van Number] &gt;= 99</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;=</Operator>
+            <Field>Van Number</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-02-23 08:40:26</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>99</Operand>
+              <StartDate>2021-02-23 08:40:26</StartDate>
+              <EndDate>2021-02-23 08:40:26</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Van Number] &gt;= 99</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Diesel&quot;" field="Type" size="1073741823" type="V_WString" />
+            <FormulaField expression="25" field="Capacity" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Type = "Diesel"
+Capacity = 25
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="53">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="282" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;Gas&quot;" field="Type" size="1073741823" type="V_WString" />
+            <FormulaField expression="33.0" field="Capacity" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Type = "Gas"
+Capacity = 33.0
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="54">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="378" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="55">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="450" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Card Number" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Card Number" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Card Number" selected="False" rename="Right_Card Number" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="56">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="534" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Date" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Date" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Date" selected="False" rename="Right_Date" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="57">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="618" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="If [Type]=&quot;Gas&quot; then [Regular]*[Capacity] else [Diesel]*[Capacity] endif" field="PriceCheck" size="8" type="Double" />
+            <FormulaField expression="If  [Amount]&gt;[PriceCheck]&#xA;then 2&#xA;elseif (([PriceCheck]*.9) &lt; [Amount]) AND ([Amount]&lt;[PriceCheck])&#xA;then 1 &#xA;else 0&#xA;endif" field="flag" size="1" type="Byte" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>PriceCheck = If [Type]="Gas" then [Regular]*[Capacity] else [Diesel]*[Capacity] ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="798" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="flag" action="GroupBy" rename="flag" />
+            <SummarizeField field="Van Number" action="GroupBy" rename="Van Number" />
+            <SummarizeField field="Date" action="GroupBy" rename="Date" />
+            <SummarizeField field="Amount" action="First" rename="Amount" />
+            <SummarizeField field="PriceCheck" action="First" rename="PriceCheck" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="702" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[flag] &gt; 0</Expression>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>&gt;</Operator>
+            <Field>flag</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2021-02-23 09:59:44</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2021-02-23 09:59:44</StartDate>
+              <EndDate>2021-02-23 09:59:44</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[flag] &gt; 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="906" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\phuon\AppData\Local\Temp\Engine_14448_e41112d85a3540bba8622e922f5d4611_\Engine_33096_75789a1e1d4e494da8b5ec5d808efe43_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="40">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="164" y="1040" width="656" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Alteryx Educational Asset - Terms and Conditions</Caption>
+          <Style TextColor="#ffffff" FillColor="#0d2345" BorderColor="#ffffff" Transparency="1" Margin="10" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="39">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="174" y="1074" width="636" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Use of this Alteryx asset is for educational purposes only and bound by the conditions set forth on alteryx.com/terms-and-conditions. Alteryx Information may not be reproduced, transmitted or distributed without Alteryx, Inc.'s permission.”</Text>
+              <Font name="Times New Roman" size="8.25" style="0" />
+              <TextColor name="White" />
+              <FillColor name="White" />
+              <Shape shape="3" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="45" Connection="Output" />
+      <Destination ToolID="56" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="55" Connection="Join" />
+      <Destination ToolID="56" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="55" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="54" Connection="Output" />
+      <Destination ToolID="55" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="False" />
+      <Destination ToolID="52" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="True" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="53" Connection="Output" />
+      <Destination ToolID="54" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="56" Connection="Join" />
+      <Destination ToolID="57" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="57" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="True" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Challenge #260 Fuel Me Once...</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="7df08234-2a4f-4b79-b874-e55bf6ed70eb" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="7df08234-2a4f-4b79-b874-e55bf6ed70eb" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
