@@ -1,0 +1,1825 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="438" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>day</InputFieldName>
+          <Language>English</Language>
+          <Format>%B %d, %Y</Format>
+          <OutputFieldName>DateTime_Out</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert day From:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="822" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\phuon\AppData\Local\Temp\Engine_38304_6cc2b5a9327b48d28bcedb24249bc174_\Engine_33096_ab3fd1001a5e44d098df0f9a641544fc_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="534" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="DateTime_Out" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DateTime_Out - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="630" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([day], &quot;, 2019&quot;, &quot;&quot;)" field="day" size="20" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[day = Replace([day], ", 2019", "")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="726" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="event" selected="True" rename="Holiday" />
+            <SelectField field="day" selected="True" rename="Day" />
+            <SelectField field="DateTime_Out" selected="False" />
+            <SelectField field="type" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings>
+        <Position x="150" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="List Box (11)">"event","day"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="342" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[day]+&quot;, 2019&quot;" field="day" size="20" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[day = [day]+", 2019"
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="246" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="day" selected="True" type="V_String" size="20" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="386" />
+          <Fields>
+            <Field name="event" />
+            <Field name="day" />
+          </Fields>
+          <Data>
+            <r>
+              <c><![CDATA[National Trivia Day ]]></c>
+              <c><![CDATA[ January 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hugging Day ]]></c>
+              <c><![CDATA[ January 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Celebration of Life Day ]]></c>
+              <c><![CDATA[ January 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Opposite Day ]]></c>
+              <c><![CDATA[ January 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Puzzle Day ]]></c>
+              <c><![CDATA[ January 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Groundhog Day ]]></c>
+              <c><![CDATA[ February 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Send a Card to a Friend Day ]]></c>
+              <c><![CDATA[ February 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Boy Scout Day ]]></c>
+              <c><![CDATA[ February 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Random Act of Kindness Day ]]></c>
+              <c><![CDATA[ February 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Tug of War Day ]]></c>
+              <c><![CDATA[ February 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Read Across America Day ]]></c>
+              <c><![CDATA[ March 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Proofreading Day ]]></c>
+              <c><![CDATA[ March 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Grammar Day ]]></c>
+              <c><![CDATA[ March 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Promposal Day ]]></c>
+              <c><![CDATA[ March 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Girl Scout Day ]]></c>
+              <c><![CDATA[ March 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Napping Day ]]></c>
+              <c><![CDATA[ March 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pi Day ]]></c>
+              <c><![CDATA[ March 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Awkward Moments Day ]]></c>
+              <c><![CDATA[ March 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Proposal Day ]]></c>
+              <c><![CDATA[ March 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Goof Off Day ]]></c>
+              <c><![CDATA[ March 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[April Fools’ Day ]]></c>
+              <c><![CDATA[ April 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Party Day ]]></c>
+              <c><![CDATA[ April 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Walking Day ]]></c>
+              <c><![CDATA[ April 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Make Lunch Count Day ]]></c>
+              <c><![CDATA[ April 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Picnic Day ]]></c>
+              <c><![CDATA[ April 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Dance Day ]]></c>
+              <c><![CDATA[ April 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Honesty Day ]]></c>
+              <c><![CDATA[ April 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[May Day ]]></c>
+              <c><![CDATA[ May 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Paranormal Day ]]></c>
+              <c><![CDATA[ May 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Password Day ]]></c>
+              <c><![CDATA[ May 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International No Diet Day ]]></c>
+              <c><![CDATA[ May 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tourist Appreciation Day ]]></c>
+              <c><![CDATA[ May 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tourism Day ]]></c>
+              <c><![CDATA[ May 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Limerick Day ]]></c>
+              <c><![CDATA[ May 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Scavenger Hunt Day ]]></c>
+              <c><![CDATA[ May 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Paper Airplane Day ]]></c>
+              <c><![CDATA[ May 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Yo-Yo Day ]]></c>
+              <c><![CDATA[ June 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sewing Machine Day ]]></c>
+              <c><![CDATA[ June 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Selfie Day ]]></c>
+              <c><![CDATA[ June 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Kissing Day ]]></c>
+              <c><![CDATA[ June 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day of the Seafarer ]]></c>
+              <c><![CDATA[ June 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Hug Holiday ]]></c>
+              <c><![CDATA[ June 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Joke Day ]]></c>
+              <c><![CDATA[ July 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World UFO Day ]]></c>
+              <c><![CDATA[ July 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Bikini Day ]]></c>
+              <c><![CDATA[ July 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Kissing Day ]]></c>
+              <c><![CDATA[ July 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Simplicity Day ]]></c>
+              <c><![CDATA[ July 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Pandemonium Day ]]></c>
+              <c><![CDATA[ July 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Give Something Away Day ]]></c>
+              <c><![CDATA[ July 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Listening Day ]]></c>
+              <c><![CDATA[ July 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Moon Day ]]></c>
+              <c><![CDATA[ July 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hammock Day ]]></c>
+              <c><![CDATA[ July 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dance Day ]]></c>
+              <c><![CDATA[ July 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Coloring Book Day ]]></c>
+              <c><![CDATA[ August 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Book Lovers Day ]]></c>
+              <c><![CDATA[ August 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Relaxation Day ]]></c>
+              <c><![CDATA[ August 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tell A Joke Day ]]></c>
+              <c><![CDATA[ August 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tooth Fairy Day ]]></c>
+              <c><![CDATA[ August 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Beach Day ]]></c>
+              <c><![CDATA[ August 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[College Colors Day ]]></c>
+              <c><![CDATA[ September 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[American Chess Day ]]></c>
+              <c><![CDATA[ September 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Read a Book Day ]]></c>
+              <c><![CDATA[ September 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Sudoku Day ]]></c>
+              <c><![CDATA[ September 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Make Your Bed Day ]]></c>
+              <c><![CDATA[ September 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Coloring Day ]]></c>
+              <c><![CDATA[ September 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Dot Day ]]></c>
+              <c><![CDATA[ September 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Talk Like a Pirate Day ]]></c>
+              <c><![CDATA[ September 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cooking Day ]]></c>
+              <c><![CDATA[ September 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Tourism Day ]]></c>
+              <c><![CDATA[ September 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Smile Day ]]></c>
+              <c><![CDATA[ October 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Checklist Day ]]></c>
+              <c><![CDATA[ October 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Crossword Puzzle Day ]]></c>
+              <c><![CDATA[ December 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Thank You Note Day ]]></c>
+              <c><![CDATA[ December 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Community Manager Appreciation Day ]]></c>
+              <c><![CDATA[ January 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Weatherperson’s Day ]]></c>
+              <c><![CDATA[ February 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Inventors’ Day ]]></c>
+              <c><![CDATA[ February 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dentist’s Day ]]></c>
+              <c><![CDATA[ March 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mom and Pop Business Owners Day ]]></c>
+              <c><![CDATA[ March 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Doctors’ Day ]]></c>
+              <c><![CDATA[ March 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hug a Newsperson Day ]]></c>
+              <c><![CDATA[ April 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Teacher’s Day ]]></c>
+              <c><![CDATA[ May 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Nurses Day ]]></c>
+              <c><![CDATA[ May 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Receptionists Day ]]></c>
+              <c><![CDATA[ May 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Be a Millionaire Day ]]></c>
+              <c><![CDATA[ May 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Waiters and Waitresses Day ]]></c>
+              <c><![CDATA[ May 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Maritime Day ]]></c>
+              <c><![CDATA[ May 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Farmers Day ]]></c>
+              <c><![CDATA[ October 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Author’s Day ]]></c>
+              <c><![CDATA[ November 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Entrepreneur’s Day ]]></c>
+              <c><![CDATA[ November 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Ninja Day ]]></c>
+              <c><![CDATA[ December 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Freedom Day ]]></c>
+              <c><![CDATA[ February 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Polar Bear Day ]]></c>
+              <c><![CDATA[ February 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Day of Unplugging ]]></c>
+              <c><![CDATA[ March 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hug a G.I. Day ]]></c>
+              <c><![CDATA[ March 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Be Heard Day ]]></c>
+              <c><![CDATA[ March 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Women’s Day ]]></c>
+              <c><![CDATA[ March 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Red Nose Day ]]></c>
+              <c><![CDATA[ March 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Day of Silence ]]></c>
+              <c><![CDATA[ April 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National No Dirty Dishes Day ]]></c>
+              <c><![CDATA[ May 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sunscreen Day ]]></c>
+              <c><![CDATA[ May 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Oceans Day ]]></c>
+              <c><![CDATA[ June 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Loving Day ]]></c>
+              <c><![CDATA[ June 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Elder Abuse Awareness Day ]]></c>
+              <c><![CDATA[ June 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Refugee Day ]]></c>
+              <c><![CDATA[ June 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Asteroid Day ]]></c>
+              <c><![CDATA[ June 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Population Day ]]></c>
+              <c><![CDATA[ July 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Youth Day ]]></c>
+              <c><![CDATA[ August 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Humanitarian Day ]]></c>
+              <c><![CDATA[ August 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Senior Citizens Day ]]></c>
+              <c><![CDATA[ August 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day of Charity ]]></c>
+              <c><![CDATA[ September 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Literacy Day ]]></c>
+              <c><![CDATA[ September 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Day of Service and Remembrance ]]></c>
+              <c><![CDATA[ September 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day of Peace ]]></c>
+              <c><![CDATA[ September 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day of Non-Violence ]]></c>
+              <c><![CDATA[ October 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Kindness Day ]]></c>
+              <c><![CDATA[ November 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Beer Can Appreciation Day ]]></c>
+              <c><![CDATA[ January 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hot Chocolate Day ]]></c>
+              <c><![CDATA[ January 31]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Drink Wine Day ]]></c>
+              <c><![CDATA[ February 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Margarita Day ]]></c>
+              <c><![CDATA[ February 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Absinthe Day ]]></c>
+              <c><![CDATA[ March 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Beer Day ]]></c>
+              <c><![CDATA[ April 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Moscato Day ]]></c>
+              <c><![CDATA[ May 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mimosa Day ]]></c>
+              <c><![CDATA[ May 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Wine Day ]]></c>
+              <c><![CDATA[ May 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mint Julep Day ]]></c>
+              <c><![CDATA[ May 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Moonshine Day ]]></c>
+              <c><![CDATA[ June 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Iced Tea Day ]]></c>
+              <c><![CDATA[ June 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Bourbon Day ]]></c>
+              <c><![CDATA[ June 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Martini Day ]]></c>
+              <c><![CDATA[ June 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Piña Colada Day ]]></c>
+              <c><![CDATA[ July 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Daiquiri Day ]]></c>
+              <c><![CDATA[ July 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tequila Day ]]></c>
+              <c><![CDATA[ July 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Scotch Day ]]></c>
+              <c><![CDATA[ July 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Beer Day ]]></c>
+              <c><![CDATA[ August 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Rum Day ]]></c>
+              <c><![CDATA[ August 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Red Wine Day ]]></c>
+              <c><![CDATA[ August 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Beer Lover’s Day ]]></c>
+              <c><![CDATA[ September 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Drink Beer Day ]]></c>
+              <c><![CDATA[ September 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Coffee Day ]]></c>
+              <c><![CDATA[ September 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Coffee Day ]]></c>
+              <c><![CDATA[ October 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Vodka Day ]]></c>
+              <c><![CDATA[ October 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National American Beer Day ]]></c>
+              <c><![CDATA[ October 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Lager Day ]]></c>
+              <c><![CDATA[ December 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Sangria Day ]]></c>
+              <c><![CDATA[ December 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Earth Day ]]></c>
+              <c><![CDATA[ April 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Arbor Day ]]></c>
+              <c><![CDATA[ April 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Migratory Bird Day ]]></c>
+              <c><![CDATA[ May 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Endangered Species Day ]]></c>
+              <c><![CDATA[ May 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day for Biological Diversity ]]></c>
+              <c><![CDATA[ May 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Learn About Composting Day ]]></c>
+              <c><![CDATA[ May 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Environment Day ]]></c>
+              <c><![CDATA[ June 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National American Eagle Day ]]></c>
+              <c><![CDATA[ June 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Mountain Day ]]></c>
+              <c><![CDATA[ December 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[St. Patrick’s Day ]]></c>
+              <c><![CDATA[ March 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[St. George’s Day ]]></c>
+              <c><![CDATA[ April 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Russian Language Day ]]></c>
+              <c><![CDATA[ June 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Day of the Dead ]]></c>
+              <c><![CDATA[ November 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Spouses Day ]]></c>
+              <c><![CDATA[ January 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Siblings Day ]]></c>
+              <c><![CDATA[ April 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Husband Appreciation Day ]]></c>
+              <c><![CDATA[ April 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Brothers and Sisters Day ]]></c>
+              <c><![CDATA[ May 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Mother’s Day ]]></c>
+              <c><![CDATA[ May 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Brother’s Day ]]></c>
+              <c><![CDATA[ May 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Global Day of Parents ]]></c>
+              <c><![CDATA[ June 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Father’s Day ]]></c>
+              <c><![CDATA[ June 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Gorgeous Grandma Day ]]></c>
+              <c><![CDATA[ July 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cousin’s Day ]]></c>
+              <c><![CDATA[ July 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Aunt and Uncle Day ]]></c>
+              <c><![CDATA[ July 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sisters Day ]]></c>
+              <c><![CDATA[ August 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Son and Daughter Day ]]></c>
+              <c><![CDATA[ August 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Senior Citizens Day ]]></c>
+              <c><![CDATA[ August 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Grandparents Day ]]></c>
+              <c><![CDATA[ September 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Family Day ]]></c>
+              <c><![CDATA[ September 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hat Day ]]></c>
+              <c><![CDATA[ January 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Umbrella Day ]]></c>
+              <c><![CDATA[ February 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dress Day ]]></c>
+              <c><![CDATA[ March 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sunglasses Day ]]></c>
+              <c><![CDATA[ June 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Lipstick Day ]]></c>
+              <c><![CDATA[ July 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Underwear Day ]]></c>
+              <c><![CDATA[ August 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Spaghetti Day ]]></c>
+              <c><![CDATA[ January 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Popcorn Day ]]></c>
+              <c><![CDATA[ January 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cheese Lover’s Day ]]></c>
+              <c><![CDATA[ January 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Blonde Brownie Day ]]></c>
+              <c><![CDATA[ January 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pie Day ]]></c>
+              <c><![CDATA[ January 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Peanut Butter Day ]]></c>
+              <c><![CDATA[ January 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Cake Day ]]></c>
+              <c><![CDATA[ January 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Croissant Day ]]></c>
+              <c><![CDATA[ January 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Eat Ice Cream for Breakfast Day ]]></c>
+              <c><![CDATA[ February 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Frozen Yogurt Day ]]></c>
+              <c><![CDATA[ February 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pizza Day ]]></c>
+              <c><![CDATA[ February 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Plum Pudding Day ]]></c>
+              <c><![CDATA[ February 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tortellini Day ]]></c>
+              <c><![CDATA[ February 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Almond Day ]]></c>
+              <c><![CDATA[ February 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Muffin Day ]]></c>
+              <c><![CDATA[ February 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sticky Bun Day ]]></c>
+              <c><![CDATA[ February 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chili Day ]]></c>
+              <c><![CDATA[ February 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tortilla Chip Day ]]></c>
+              <c><![CDATA[ February 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Clam Chowder Day ]]></c>
+              <c><![CDATA[ February 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pistachio Day ]]></c>
+              <c><![CDATA[ February 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Souffle Day ]]></c>
+              <c><![CDATA[ February 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Peanut Butter Lover’s Day ]]></c>
+              <c><![CDATA[ March 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Frozen Food Day ]]></c>
+              <c><![CDATA[ March 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pancake Day ]]></c>
+              <c><![CDATA[ March 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Meatball Day ]]></c>
+              <c><![CDATA[ March 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pack Your Lunch Day ]]></c>
+              <c><![CDATA[ March 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Potato Chip Day ]]></c>
+              <c><![CDATA[ March 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Artichoke Day ]]></c>
+              <c><![CDATA[ March 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Corn Dog Day ]]></c>
+              <c><![CDATA[ March 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Crunchy Taco Day ]]></c>
+              <c><![CDATA[ March 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Waffle Day ]]></c>
+              <c><![CDATA[ March 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Spinach Day ]]></c>
+              <c><![CDATA[ March 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Spanish Paella Day ]]></c>
+              <c><![CDATA[ March 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Peanut Butter and Jelly Day ]]></c>
+              <c><![CDATA[ April 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Deep Dish Pizza Day ]]></c>
+              <c><![CDATA[ April 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Burrito Day ]]></c>
+              <c><![CDATA[ April 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Empanada Day ]]></c>
+              <c><![CDATA[ April 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Grilled Cheese Sandwich Day ]]></c>
+              <c><![CDATA[ April 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cheeseball Day ]]></c>
+              <c><![CDATA[ April 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Garlic Day ]]></c>
+              <c><![CDATA[ April 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Jelly Bean Day ]]></c>
+              <c><![CDATA[ April 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pigs in a Blanket Day ]]></c>
+              <c><![CDATA[ April 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pretzel Day ]]></c>
+              <c><![CDATA[ April 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Prime Rib Day ]]></c>
+              <c><![CDATA[ April 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Shrimp Scampi Day ]]></c>
+              <c><![CDATA[ April 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Raisin Day ]]></c>
+              <c><![CDATA[ April 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hoagie Day ]]></c>
+              <c><![CDATA[ May 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Shrimp Day ]]></c>
+              <c><![CDATA[ May 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Eat What You Want Day ]]></c>
+              <c><![CDATA[ May 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Apple Pie Day ]]></c>
+              <c><![CDATA[ May 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Fruit Cocktail Day ]]></c>
+              <c><![CDATA[ May 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Buttermilk Biscuit Day ]]></c>
+              <c><![CDATA[ May 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Chip Day ]]></c>
+              <c><![CDATA[ May 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Walnut Day ]]></c>
+              <c><![CDATA[ May 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pizza Party Day ]]></c>
+              <c><![CDATA[ May 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Devil’s Food Cake Day ]]></c>
+              <c><![CDATA[ May 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Taffy Day ]]></c>
+              <c><![CDATA[ May 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Brisket Day ]]></c>
+              <c><![CDATA[ May 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hamburger Day ]]></c>
+              <c><![CDATA[ May 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Macaroon Day ]]></c>
+              <c><![CDATA[ May 31]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Olive Day ]]></c>
+              <c><![CDATA[ June 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Donut Day ]]></c>
+              <c><![CDATA[ June 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Egg Day ]]></c>
+              <c><![CDATA[ June 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cheese Day ]]></c>
+              <c><![CDATA[ June 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Ice Cream Day ]]></c>
+              <c><![CDATA[ June 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Corn on the Cob Day ]]></c>
+              <c><![CDATA[ June 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Fudge Day ]]></c>
+              <c><![CDATA[ June 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Eat Your Vegetables Day ]]></c>
+              <c><![CDATA[ June 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Sushi Day ]]></c>
+              <c><![CDATA[ June 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Onion Ring Day ]]></c>
+              <c><![CDATA[ June 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Pudding Day ]]></c>
+              <c><![CDATA[ June 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Tapioca Day ]]></c>
+              <c><![CDATA[ June 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Fried Chicken Day ]]></c>
+              <c><![CDATA[ July 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Strawberry Sundae Day ]]></c>
+              <c><![CDATA[ July 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sugar Cookie Day ]]></c>
+              <c><![CDATA[ July 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chicken Wing Day ]]></c>
+              <c><![CDATA[ July 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National French Fry Day ]]></c>
+              <c><![CDATA[ July 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mac and Cheese Day ]]></c>
+              <c><![CDATA[ July 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Corn Fritter Day ]]></c>
+              <c><![CDATA[ July 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Ice Cream Day ]]></c>
+              <c><![CDATA[ July 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hot Dog Day ]]></c>
+              <c><![CDATA[ July 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Junk Food Day ]]></c>
+              <c><![CDATA[ July 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Hot Fudge Sundae Day ]]></c>
+              <c><![CDATA[ July 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Milk Chocolate Day ]]></c>
+              <c><![CDATA[ July 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Lasagna Day ]]></c>
+              <c><![CDATA[ July 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cheesecake Day ]]></c>
+              <c><![CDATA[ July 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Ice Cream Sandwich Day ]]></c>
+              <c><![CDATA[ August 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Watermelon Day ]]></c>
+              <c><![CDATA[ August 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Chip Cookie Day ]]></c>
+              <c><![CDATA[ August 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mustard Day ]]></c>
+              <c><![CDATA[ August 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Fajita Day ]]></c>
+              <c><![CDATA[ August 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Potato Day ]]></c>
+              <c><![CDATA[ August 19]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Lemonade Day ]]></c>
+              <c><![CDATA[ August 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sponge Cake Day ]]></c>
+              <c><![CDATA[ August 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Waffle Day ]]></c>
+              <c><![CDATA[ August 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Banana Split Day ]]></c>
+              <c><![CDATA[ August 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Lemon Juice Day ]]></c>
+              <c><![CDATA[ August 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Trail Mix Day ]]></c>
+              <c><![CDATA[ August 31]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Coconut Day ]]></c>
+              <c><![CDATA[ September 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cheese Pizza Day ]]></c>
+              <c><![CDATA[ September 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Peanut Day ]]></c>
+              <c><![CDATA[ September 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Linguine Day ]]></c>
+              <c><![CDATA[ September 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Guacamole Day ]]></c>
+              <c><![CDATA[ September 16]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cheeseburger Day ]]></c>
+              <c><![CDATA[ September 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pepperoni Pizza Day ]]></c>
+              <c><![CDATA[ September 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Ice Cream Cone Day ]]></c>
+              <c><![CDATA[ September 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cherries Jubilee Day ]]></c>
+              <c><![CDATA[ September 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Lobster Day ]]></c>
+              <c><![CDATA[ September 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cooking Day ]]></c>
+              <c><![CDATA[ September 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pancake Day ]]></c>
+              <c><![CDATA[ September 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Vegetarian Day ]]></c>
+              <c><![CDATA[ October 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Homemade Cookies Day ]]></c>
+              <c><![CDATA[ October 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Taco Day ]]></c>
+              <c><![CDATA[ October 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Noodle Day ]]></c>
+              <c><![CDATA[ October 6]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sausage Pizza Day ]]></c>
+              <c><![CDATA[ October 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dessert Day ]]></c>
+              <c><![CDATA[ October 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pasta Day ]]></c>
+              <c><![CDATA[ October 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Nut Day ]]></c>
+              <c><![CDATA[ October 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Bologna Day ]]></c>
+              <c><![CDATA[ October 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Pasta Day ]]></c>
+              <c><![CDATA[ October 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pumpkin Day ]]></c>
+              <c><![CDATA[ October 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Chocolate Day ]]></c>
+              <c><![CDATA[ October 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sandwich Day ]]></c>
+              <c><![CDATA[ November 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Candy Day ]]></c>
+              <c><![CDATA[ November 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Sundae Day ]]></c>
+              <c><![CDATA[ November 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pickle Day ]]></c>
+              <c><![CDATA[ November 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cake Day ]]></c>
+              <c><![CDATA[ November 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cookie Day ]]></c>
+              <c><![CDATA[ December 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Brownie Day ]]></c>
+              <c><![CDATA[ December 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cupcake Day ]]></c>
+              <c><![CDATA[ December 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Maple Syrup Day ]]></c>
+              <c><![CDATA[ December 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Bacon Day ]]></c>
+              <c><![CDATA[ December 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Wear Red Day ]]></c>
+              <c><![CDATA[ February 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Cancer Day ]]></c>
+              <c><![CDATA[ February 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Kick Butts Day ]]></c>
+              <c><![CDATA[ March 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Health Day ]]></c>
+              <c><![CDATA[ April 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Blood Donor Day ]]></c>
+              <c><![CDATA[ June 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hydration Day ]]></c>
+              <c><![CDATA[ June 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Stay Out of the Sun Day ]]></c>
+              <c><![CDATA[ July 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Hepatitis Day ]]></c>
+              <c><![CDATA[ July 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Mental Health Day ]]></c>
+              <c><![CDATA[ October 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Winston Churchill Day ]]></c>
+              <c><![CDATA[ April 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[ANZAC Day ]]></c>
+              <c><![CDATA[ April 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Harvey Milk Day ]]></c>
+              <c><![CDATA[ May 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Memorial Day ]]></c>
+              <c><![CDATA[ May 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Nelson Mandela International Day ]]></c>
+              <c><![CDATA[ July 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Skyscraper Day ]]></c>
+              <c><![CDATA[ September 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Labor Day ]]></c>
+              <c><![CDATA[ September 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Day of Service and Remembrance ]]></c>
+              <c><![CDATA[ September 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day of Democracy  ]]></c>
+              <c><![CDATA[ September 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Constitution Day ]]></c>
+              <c><![CDATA[ September 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Columbus Day ]]></c>
+              <c><![CDATA[ October 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dress Up Your Pet Day ]]></c>
+              <c><![CDATA[ January 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Love Your Pet Day ]]></c>
+              <c><![CDATA[ February 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Walking the Dog Day ]]></c>
+              <c><![CDATA[ February 22]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Dog Biscuit Appreciation Day ]]></c>
+              <c><![CDATA[ February 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National K9 Veterans Day ]]></c>
+              <c><![CDATA[ March 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Puppy Day ]]></c>
+              <c><![CDATA[ March 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Respect Your Cat Day ]]></c>
+              <c><![CDATA[ March 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Pet Day ]]></c>
+              <c><![CDATA[ April 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Hug Your Cat Day ]]></c>
+              <c><![CDATA[ June 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Take Your Dog to Work Day ]]></c>
+              <c><![CDATA[ June 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Kitten Day ]]></c>
+              <c><![CDATA[ July 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mutt Day ]]></c>
+              <c><![CDATA[ July 31]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Cat Day ]]></c>
+              <c><![CDATA[ August 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Spoil Your Dog Day ]]></c>
+              <c><![CDATA[ August 10]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Black Cat Appreciation Day ]]></c>
+              <c><![CDATA[ August 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dog Day ]]></c>
+              <c><![CDATA[ August 26]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Holistic Pet Day ]]></c>
+              <c><![CDATA[ August 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Dogs in Politics Day ]]></c>
+              <c><![CDATA[ September 23]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Reptile Awareness Day ]]></c>
+              <c><![CDATA[ October 21]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Cat Day ]]></c>
+              <c><![CDATA[ October 29]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Mutt Day ]]></c>
+              <c><![CDATA[ December 2]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Galentine’s Day ]]></c>
+              <c><![CDATA[ February 13]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Star Wars Day ]]></c>
+              <c><![CDATA[ May 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Donald Duck Day ]]></c>
+              <c><![CDATA[ June 9]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Beatles Day ]]></c>
+              <c><![CDATA[ June 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Social Media Day ]]></c>
+              <c><![CDATA[ June 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Emoji Day ]]></c>
+              <c><![CDATA[ July 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Spider-Man Day ]]></c>
+              <c><![CDATA[ August 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Answer The Telephone Like Buddy The Elf Day ]]></c>
+              <c><![CDATA[ December 18]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Singles Awareness Day ]]></c>
+              <c><![CDATA[ February 15]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Ex Spouse Day ]]></c>
+              <c><![CDATA[ April 14]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Look-Alike Day ]]></c>
+              <c><![CDATA[ April 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Best Friends’ Day ]]></c>
+              <c><![CDATA[ June 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Day of Friendship ]]></c>
+              <c><![CDATA[ July 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Girlfriends Day ]]></c>
+              <c><![CDATA[ August 1]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Friendship Day ]]></c>
+              <c><![CDATA[ August 7]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Boyfriend Day ]]></c>
+              <c><![CDATA[ October 3]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Unfriend Day ]]></c>
+              <c><![CDATA[ November 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Amazon Prime Day ]]></c>
+              <c><![CDATA[ July 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Secondhand Wardrobe Day ]]></c>
+              <c><![CDATA[ August 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Telephone Tuesday ]]></c>
+              <c><![CDATA[ September 5]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Singles Day ]]></c>
+              <c><![CDATA[ November 11]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Black Friday ]]></c>
+              <c><![CDATA[ November 24]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Small Business Saturday ]]></c>
+              <c><![CDATA[ November 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Cyber Monday ]]></c>
+              <c><![CDATA[ November 27]]></c>
+            </r>
+            <r>
+              <c><![CDATA[Giving Tuesday ]]></c>
+              <c><![CDATA[ November 28]]></c>
+            </r>
+            <r>
+              <c><![CDATA[World Backup Day ]]></c>
+              <c><![CDATA[ March 31]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Telephone Day ]]></c>
+              <c><![CDATA[ April 25]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Day of Civic Hacking ]]></c>
+              <c><![CDATA[ June 4]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Video Game Day ]]></c>
+              <c><![CDATA[ July 8]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Radio Day ]]></c>
+              <c><![CDATA[ August 20]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Video Games Day ]]></c>
+              <c><![CDATA[ September 12]]></c>
+            </r>
+            <r>
+              <c><![CDATA[International Podcast Day ]]></c>
+              <c><![CDATA[ September 30]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Clean Your Virtual Desktop Day ]]></c>
+              <c><![CDATA[ October 17]]></c>
+            </r>
+            <r>
+              <c><![CDATA[National Internet Day ]]></c>
+              <c><![CDATA[ October 29]]></c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output26" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="19" Connection="Input2" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Challenge #193 Unofficial Holidays</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="9d79a834-fd01-4218-a170-21989d1aa861" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="9d79a834-fd01-4218-a170-21989d1aa861" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
