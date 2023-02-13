@@ -1,0 +1,3614 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="426" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>ContractStart</InputFieldName>
+          <Format>MM/dd/yyyy</Format>
+          <OutputFieldName>ContractStart_Formatted</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert ContractStart From:
+MM/dd/yyyy</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="1" selected="True" rename="Client ID" />
+            <SelectField field="2" selected="True" rename="ContractStart" />
+            <SelectField field="3" selected="True" rename="Order Volume" type="Double" size="8" />
+            <SelectField field="Client ID" selected="False" type="Int64" size="8" />
+            <SelectField field="Client ID-ContractDate-Order Volume" selected="False" />
+            <SelectField field="Order Volume" selected="False" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="234" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Year" selected="True" type="String" size="5" />
+            <SelectField field="Quarterly Premium" selected="True" type="Double" size="8" />
+            <SelectField field="Per Unit Cost" selected="False" type="Double" size="8" />
+            <SelectField field="Our Cost" selected="False" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="522" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Client ID" order="Ascending" />
+            <Field field="ContractStart_Formatted" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Client ID - Ascending
+ContractStart_Formatted - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="618" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Client ID</UpdateField_Name>
+          <CreateField_Name>Quarters</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>NULL</OtherRows>
+          <NumRows value="1" />
+          <Expression>If IsNull([Row-1:ContractStart_Formatted]) THEN 1
+ELSE [Row-1:Quarters]+1
+ENDIF</Expression>
+          <GroupByFields>
+            <Field field="Client ID" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>If IsNull([Row-1:ContractStart_Formatted]) THEN 1
+ELSE [Row-1...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="858" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Year" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Year" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Year" selected="True" rename="Right_Year" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="714" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="True" />
+          <InputFieldName>ContractStart_Formatted</InputFieldName>
+          <Format>yyyy</Format>
+          <OutputFieldName>Year</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert ContractStart_Formatted To:
+Custom</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="954" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Quarterly Premium]+([Per Unit Fee for Customers]*[Order Volume])" field="Revenue" size="8" type="Double" />
+            <FormulaField expression="[Order Volume]*[Per Unit Production Cost]" field="Cost" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Revenue = [Quarterly Premium]+([Per Unit Fee for Customers]*[Order Volume])
+Cost...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1050" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Quarters" action="GroupBy" rename="Quarters" />
+            <SummarizeField field="Revenue" action="Sum" rename="Sum_Revenue" />
+            <SummarizeField field="Cost" action="Sum" rename="Sum_Cost" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1146" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="([Sum_Revenue]-[Sum_Cost])/[Sum_Revenue]" field="Margin Percentage" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Margin Percentage = ([Sum_Revenue]-[Sum_Cost])/[Sum_Revenue]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1242" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Margin Percentage" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Margin Percentage - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="138" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Client ID-ContractDate-Order Volume</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>
+          </RootName>
+          <Delimeters value="|" />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings>
+        <Position x="234" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Client ID-ContractDate-Order Volume","1","2","3"</Value>
+          <Value name="Check Box (84)">True</Value>
+          <Value name="Check Box (117)">True</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">False</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">False</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="992" />
+          <Fields>
+            <Field name="Client ID-ContractDate-Order Volume" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1 | 10/1/2019 | 115</c>
+            </r>
+            <r>
+              <c>1 | 7/1/2019 | 134</c>
+            </r>
+            <r>
+              <c>1 | 4/1/2019 | 169</c>
+            </r>
+            <r>
+              <c>1 | 1/1/2019 | 84</c>
+            </r>
+            <r>
+              <c>1 | 10/1/2018 | 110</c>
+            </r>
+            <r>
+              <c>1 | 7/1/2018 | 145</c>
+            </r>
+            <r>
+              <c>1 | 4/1/2018 | 149</c>
+            </r>
+            <r>
+              <c>1 | 1/1/2018 | 85</c>
+            </r>
+            <r>
+              <c>1 | 10/1/2017 | 131</c>
+            </r>
+            <r>
+              <c>1 | 7/1/2017 | 136</c>
+            </r>
+            <r>
+              <c>1 | 4/1/2017 | 140</c>
+            </r>
+            <r>
+              <c>1 | 1/1/2017 | 81</c>
+            </r>
+            <r>
+              <c>1 | 10/1/2016 | 119</c>
+            </r>
+            <r>
+              <c>1 | 7/1/2016 | 164</c>
+            </r>
+            <r>
+              <c>1 | 4/1/2016 | 177</c>
+            </r>
+            <r>
+              <c>1 | 1/1/2016 | 113</c>
+            </r>
+            <r>
+              <c>1 | 10/1/2015 | 136</c>
+            </r>
+            <r>
+              <c>1 | 7/1/2015 | 168</c>
+            </r>
+            <r>
+              <c>1 | 4/1/2015 | 197</c>
+            </r>
+            <r>
+              <c>1 | 1/1/2015 | 124</c>
+            </r>
+            <r>
+              <c>1 | 10/1/2014 | 141</c>
+            </r>
+            <r>
+              <c>2 | 10/1/2019 | 105</c>
+            </r>
+            <r>
+              <c>2 | 7/1/2019 | 138</c>
+            </r>
+            <r>
+              <c>2 | 4/1/2019 | 185</c>
+            </r>
+            <r>
+              <c>2 | 1/1/2019 | 111</c>
+            </r>
+            <r>
+              <c>2 | 10/1/2018 | 132</c>
+            </r>
+            <r>
+              <c>2 | 7/1/2018 | 166</c>
+            </r>
+            <r>
+              <c>2 | 4/1/2018 | 184</c>
+            </r>
+            <r>
+              <c>2 | 1/1/2018 | 100</c>
+            </r>
+            <r>
+              <c>2 | 10/1/2017 | 144</c>
+            </r>
+            <r>
+              <c>2 | 7/1/2017 | 175</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2019 | 117</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2019 | 129</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2019 | 146</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2019 | 95</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2018 | 131</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2018 | 142</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2018 | 142</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2018 | 79</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2017 | 124</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2017 | 125</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2017 | 165</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2017 | 91</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2016 | 119</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2016 | 126</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2016 | 152</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2016 | 88</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2015 | 125</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2015 | 150</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2015 | 170</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2015 | 96</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2014 | 127</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2014 | 150</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2014 | 143</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2014 | 105</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2013 | 100</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2013 | 137</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2013 | 177</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2013 | 122</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2012 | 136</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2012 | 172</c>
+            </r>
+            <r>
+              <c>3 | 4/1/2012 | 195</c>
+            </r>
+            <r>
+              <c>3 | 1/1/2012 | 110</c>
+            </r>
+            <r>
+              <c>3 | 10/1/2011 | 139</c>
+            </r>
+            <r>
+              <c>3 | 7/1/2011 | 177</c>
+            </r>
+            <r>
+              <c>4 | 10/1/2019 | 111</c>
+            </r>
+            <r>
+              <c>4 | 7/1/2019 | 167</c>
+            </r>
+            <r>
+              <c>4 | 4/1/2019 | 179</c>
+            </r>
+            <r>
+              <c>4 | 1/1/2019 | 122</c>
+            </r>
+            <r>
+              <c>4 | 10/1/2018 | 138</c>
+            </r>
+            <r>
+              <c>4 | 7/1/2018 | 174</c>
+            </r>
+            <r>
+              <c>4 | 4/1/2018 | 193</c>
+            </r>
+            <r>
+              <c>4 | 1/1/2018 | 122</c>
+            </r>
+            <r>
+              <c>4 | 10/1/2017 | 143</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2019 | 107</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2019 | 125</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2019 | 164</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2019 | 82</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2018 | 124</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2018 | 141</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2018 | 148</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2018 | 93</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2017 | 109</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2017 | 144</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2017 | 146</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2017 | 91</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2016 | 127</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2016 | 118</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2016 | 160</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2016 | 94</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2015 | 113</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2015 | 150</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2015 | 142</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2015 | 84</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2014 | 118</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2014 | 146</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2014 | 161</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2014 | 77</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2013 | 119</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2013 | 156</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2013 | 148</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2013 | 96</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2012 | 114</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2012 | 133</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2012 | 162</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2012 | 88</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2011 | 125</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2011 | 156</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2011 | 157</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2011 | 83</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2010 | 117</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2010 | 144</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2010 | 136</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2010 | 84</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2009 | 109</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2009 | 121</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2009 | 144</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2009 | 95</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2008 | 117</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2008 | 153</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2008 | 144</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2008 | 104</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2007 | 124</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2007 | 149</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2007 | 161</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2007 | 95</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2006 | 116</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2006 | 181</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2006 | 178</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2006 | 118</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2005 | 141</c>
+            </r>
+            <r>
+              <c>5 | 7/1/2005 | 168</c>
+            </r>
+            <r>
+              <c>5 | 4/1/2005 | 202</c>
+            </r>
+            <r>
+              <c>5 | 1/1/2005 | 120</c>
+            </r>
+            <r>
+              <c>5 | 10/1/2004 | 140</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2019 | 127</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2019 | 143</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2019 | 162</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2019 | 86</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2018 | 108</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2018 | 153</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2018 | 151</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2018 | 92</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2017 | 119</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2017 | 151</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2017 | 158</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2017 | 75</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2016 | 130</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2016 | 147</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2016 | 156</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2016 | 90</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2015 | 113</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2015 | 131</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2015 | 143</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2015 | 77</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2014 | 105</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2014 | 151</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2014 | 184</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2014 | 101</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2013 | 139</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2013 | 165</c>
+            </r>
+            <r>
+              <c>6 | 4/1/2013 | 207</c>
+            </r>
+            <r>
+              <c>6 | 1/1/2013 | 117</c>
+            </r>
+            <r>
+              <c>6 | 10/1/2012 | 136</c>
+            </r>
+            <r>
+              <c>6 | 7/1/2012 | 179</c>
+            </r>
+            <r>
+              <c>7 | 10/1/2019 | 118</c>
+            </r>
+            <r>
+              <c>7 | 7/1/2019 | 142</c>
+            </r>
+            <r>
+              <c>7 | 4/1/2019 | 165</c>
+            </r>
+            <r>
+              <c>7 | 1/1/2019 | 108</c>
+            </r>
+            <r>
+              <c>7 | 10/1/2018 | 108</c>
+            </r>
+            <r>
+              <c>7 | 7/1/2018 | 133</c>
+            </r>
+            <r>
+              <c>7 | 4/1/2018 | 143</c>
+            </r>
+            <r>
+              <c>7 | 1/1/2018 | 88</c>
+            </r>
+            <r>
+              <c>7 | 10/1/2017 | 121</c>
+            </r>
+            <r>
+              <c>7 | 7/1/2017 | 131</c>
+            </r>
+            <r>
+              <c>7 | 4/1/2017 | 146</c>
+            </r>
+            <r>
+              <c>7 | 1/1/2017 | 80</c>
+            </r>
+            <r>
+              <c>7 | 10/1/2016 | 114</c>
+            </r>
+            <r>
+              <c>7 | 7/1/2016 | 143</c>
+            </r>
+            <r>
+              <c>7 | 4/1/2016 | 176</c>
+            </r>
+            <r>
+              <c>7 | 1/1/2016 | 98</c>
+            </r>
+            <r>
+              <c>7 | 10/1/2015 | 140</c>
+            </r>
+            <r>
+              <c>7 | 7/1/2015 | 163</c>
+            </r>
+            <r>
+              <c>7 | 4/1/2015 | 197</c>
+            </r>
+            <r>
+              <c>7 | 1/1/2015 | 123</c>
+            </r>
+            <r>
+              <c>7 | 10/1/2014 | 145</c>
+            </r>
+            <r>
+              <c>7 | 7/1/2014 | 179</c>
+            </r>
+            <r>
+              <c>8 | 10/1/2019 | 144</c>
+            </r>
+            <r>
+              <c>8 | 7/1/2019 | 169</c>
+            </r>
+            <r>
+              <c>8 | 4/1/2019 | 186</c>
+            </r>
+            <r>
+              <c>8 | 1/1/2019 | 113</c>
+            </r>
+            <r>
+              <c>8 | 10/1/2018 | 146</c>
+            </r>
+            <r>
+              <c>8 | 7/1/2018 | 187</c>
+            </r>
+            <r>
+              <c>8 | 4/1/2018 | 191</c>
+            </r>
+            <r>
+              <c>8 | 1/1/2018 | 129</c>
+            </r>
+            <r>
+              <c>9 | 10/1/2019 | 116</c>
+            </r>
+            <r>
+              <c>9 | 7/1/2019 | 135</c>
+            </r>
+            <r>
+              <c>9 | 4/1/2019 | 130</c>
+            </r>
+            <r>
+              <c>9 | 1/1/2019 | 93</c>
+            </r>
+            <r>
+              <c>9 | 10/1/2018 | 109</c>
+            </r>
+            <r>
+              <c>9 | 7/1/2018 | 132</c>
+            </r>
+            <r>
+              <c>9 | 4/1/2018 | 148</c>
+            </r>
+            <r>
+              <c>9 | 1/1/2018 | 87</c>
+            </r>
+            <r>
+              <c>9 | 10/1/2017 | 107</c>
+            </r>
+            <r>
+              <c>9 | 7/1/2017 | 148</c>
+            </r>
+            <r>
+              <c>9 | 4/1/2017 | 158</c>
+            </r>
+            <r>
+              <c>9 | 1/1/2017 | 78</c>
+            </r>
+            <r>
+              <c>9 | 10/1/2016 | 116</c>
+            </r>
+            <r>
+              <c>9 | 7/1/2016 | 131</c>
+            </r>
+            <r>
+              <c>9 | 4/1/2016 | 139</c>
+            </r>
+            <r>
+              <c>9 | 1/1/2016 | 116</c>
+            </r>
+            <r>
+              <c>9 | 10/1/2015 | 135</c>
+            </r>
+            <r>
+              <c>9 | 7/1/2015 | 165</c>
+            </r>
+            <r>
+              <c>9 | 4/1/2015 | 161</c>
+            </r>
+            <r>
+              <c>9 | 1/1/2015 | 118</c>
+            </r>
+            <r>
+              <c>9 | 10/1/2014 | 146</c>
+            </r>
+            <r>
+              <c>9 | 7/1/2014 | 183</c>
+            </r>
+            <r>
+              <c>9 | 4/1/2014 | 189</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2019 | 115</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2019 | 129</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2019 | 147</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2019 | 91</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2018 | 120</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2018 | 141</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2018 | 157</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2018 | 97</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2017 | 103</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2017 | 157</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2017 | 134</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2017 | 94</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2016 | 121</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2016 | 159</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2016 | 145</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2016 | 85</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2015 | 119</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2015 | 141</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2015 | 138</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2015 | 76</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2014 | 115</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2014 | 128</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2014 | 143</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2014 | 88</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2013 | 116</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2013 | 152</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2013 | 155</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2013 | 92</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2012 | 109</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2012 | 133</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2012 | 159</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2012 | 89</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2011 | 105</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2011 | 138</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2011 | 131</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2011 | 92</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2010 | 121</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2010 | 140</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2010 | 163</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2010 | 86</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2009 | 114</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2009 | 136</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2009 | 143</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2009 | 95</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2008 | 107</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2008 | 148</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2008 | 157</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2008 | 94</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2007 | 102</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2007 | 152</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2007 | 133</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2007 | 79</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2006 | 107</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2006 | 152</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2006 | 147</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2006 | 83</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2005 | 117</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2005 | 152</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2005 | 142</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2005 | 74</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2004 | 122</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2004 | 144</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2004 | 192</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2004 | 106</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2003 | 130</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2003 | 170</c>
+            </r>
+            <r>
+              <c>10 | 4/1/2003 | 171</c>
+            </r>
+            <r>
+              <c>10 | 1/1/2003 | 116</c>
+            </r>
+            <r>
+              <c>10 | 10/1/2002 | 137</c>
+            </r>
+            <r>
+              <c>10 | 7/1/2002 | 172</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2018 | 116</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2018 | 134</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2018 | 161</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2018 | 90</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2017 | 132</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2017 | 149</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2017 | 147</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2017 | 76</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2016 | 115</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2016 | 131</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2016 | 146</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2016 | 99</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2015 | 116</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2015 | 140</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2015 | 156</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2015 | 81</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2014 | 117</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2014 | 146</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2014 | 143</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2014 | 102</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2013 | 118</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2013 | 146</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2013 | 160</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2013 | 80</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2012 | 122</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2012 | 137</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2012 | 146</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2012 | 93</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2011 | 121</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2011 | 150</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2011 | 147</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2011 | 101</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2010 | 120</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2010 | 158</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2010 | 169</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2010 | 99</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2009 | 118</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2009 | 123</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2009 | 172</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2009 | 92</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2008 | 119</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2008 | 134</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2008 | 155</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2008 | 89</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2007 | 114</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2007 | 133</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2007 | 140</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2007 | 105</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2006 | 110</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2006 | 146</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2006 | 166</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2006 | 94</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2005 | 115</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2005 | 136</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2005 | 150</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2005 | 87</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2004 | 115</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2004 | 141</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2004 | 148</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2004 | 91</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2003 | 121</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2003 | 132</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2003 | 149</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2003 | 101</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2002 | 136</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2002 | 175</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2002 | 189</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2002 | 98</c>
+            </r>
+            <r>
+              <c>11 | 10/1/2001 | 143</c>
+            </r>
+            <r>
+              <c>11 | 7/1/2001 | 183</c>
+            </r>
+            <r>
+              <c>11 | 4/1/2001 | 177</c>
+            </r>
+            <r>
+              <c>11 | 1/1/2001 | 102</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2019 | 131</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2019 | 158</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2019 | 165</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2019 | 86</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2018 | 120</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2018 | 141</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2018 | 156</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2018 | 81</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2017 | 129</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2017 | 145</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2017 | 161</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2017 | 75</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2016 | 113</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2016 | 122</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2016 | 158</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2016 | 84</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2015 | 119</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2015 | 130</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2015 | 142</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2015 | 92</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2014 | 113</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2014 | 154</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2014 | 150</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2014 | 97</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2013 | 100</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2013 | 139</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2013 | 139</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2013 | 84</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2012 | 104</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2012 | 137</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2012 | 138</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2012 | 87</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2011 | 125</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2011 | 145</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2011 | 139</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2011 | 90</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2010 | 116</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2010 | 122</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2010 | 137</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2010 | 76</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2009 | 121</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2009 | 147</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2009 | 168</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2009 | 93</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2008 | 118</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2008 | 150</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2008 | 138</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2008 | 77</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2007 | 113</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2007 | 142</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2007 | 159</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2007 | 90</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2006 | 124</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2006 | 126</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2006 | 153</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2006 | 88</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2005 | 107</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2005 | 142</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2005 | 138</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2005 | 104</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2004 | 112</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2004 | 164</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2004 | 195</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2004 | 114</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2003 | 130</c>
+            </r>
+            <r>
+              <c>12 | 7/1/2003 | 180</c>
+            </r>
+            <r>
+              <c>12 | 4/1/2003 | 198</c>
+            </r>
+            <r>
+              <c>12 | 1/1/2003 | 103</c>
+            </r>
+            <r>
+              <c>12 | 10/1/2002 | 155</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2019 | 115</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2019 | 135</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2019 | 140</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2019 | 86</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2018 | 108</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2018 | 121</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2018 | 152</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2018 | 89</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2017 | 115</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2017 | 119</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2017 | 129</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2017 | 83</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2016 | 99</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2016 | 125</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2016 | 169</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2016 | 100</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2015 | 112</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2015 | 161</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2015 | 173</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2015 | 90</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2014 | 113</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2014 | 145</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2014 | 165</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2014 | 94</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2013 | 113</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2013 | 142</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2013 | 156</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2013 | 103</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2012 | 108</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2012 | 136</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2012 | 142</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2012 | 92</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2011 | 121</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2011 | 153</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2011 | 147</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2011 | 84</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2010 | 109</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2010 | 142</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2010 | 148</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2010 | 81</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2009 | 122</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2009 | 129</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2009 | 131</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2009 | 108</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2008 | 117</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2008 | 143</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2008 | 129</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2008 | 93</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2007 | 125</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2007 | 145</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2007 | 139</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2007 | 104</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2006 | 117</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2006 | 157</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2006 | 153</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2006 | 83</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2005 | 115</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2005 | 173</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2005 | 178</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2005 | 104</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2004 | 132</c>
+            </r>
+            <r>
+              <c>13 | 7/1/2004 | 191</c>
+            </r>
+            <r>
+              <c>13 | 4/1/2004 | 203</c>
+            </r>
+            <r>
+              <c>13 | 1/1/2004 | 118</c>
+            </r>
+            <r>
+              <c>13 | 10/1/2003 | 150</c>
+            </r>
+            <r>
+              <c>14 | 10/1/2019 | 110</c>
+            </r>
+            <r>
+              <c>14 | 7/1/2019 | 152</c>
+            </r>
+            <r>
+              <c>14 | 4/1/2019 | 179</c>
+            </r>
+            <r>
+              <c>14 | 1/1/2019 | 106</c>
+            </r>
+            <r>
+              <c>14 | 10/1/2018 | 134</c>
+            </r>
+            <r>
+              <c>14 | 7/1/2018 | 167</c>
+            </r>
+            <r>
+              <c>14 | 4/1/2018 | 173</c>
+            </r>
+            <r>
+              <c>14 | 1/1/2018 | 110</c>
+            </r>
+            <r>
+              <c>14 | 10/1/2017 | 149</c>
+            </r>
+            <r>
+              <c>14 | 7/1/2017 | 182</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2019 | 113</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2019 | 134</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2019 | 135</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2019 | 106</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2018 | 110</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2018 | 126</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2018 | 165</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2018 | 91</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2017 | 126</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2017 | 134</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2017 | 164</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2017 | 86</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2016 | 102</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2016 | 144</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2016 | 161</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2016 | 82</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2015 | 109</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2015 | 142</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2015 | 170</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2015 | 106</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2014 | 108</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2014 | 124</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2014 | 152</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2014 | 103</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2013 | 119</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2013 | 126</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2013 | 151</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2013 | 95</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2012 | 108</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2012 | 158</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2012 | 159</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2012 | 92</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2011 | 122</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2011 | 143</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2011 | 166</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2011 | 81</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2010 | 121</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2010 | 145</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2010 | 140</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2010 | 93</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2009 | 120</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2009 | 133</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2009 | 152</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2009 | 78</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2008 | 129</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2008 | 144</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2008 | 130</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2008 | 96</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2007 | 120</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2007 | 158</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2007 | 168</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2007 | 95</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2006 | 114</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2006 | 135</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2006 | 156</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2006 | 99</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2005 | 102</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2005 | 174</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2005 | 183</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2005 | 101</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2004 | 143</c>
+            </r>
+            <r>
+              <c>15 | 7/1/2004 | 161</c>
+            </r>
+            <r>
+              <c>15 | 4/1/2004 | 176</c>
+            </r>
+            <r>
+              <c>15 | 1/1/2004 | 113</c>
+            </r>
+            <r>
+              <c>15 | 10/1/2003 | 140</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2019 | 119</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2019 | 138</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2019 | 135</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2019 | 103</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2018 | 111</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2018 | 152</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2018 | 163</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2018 | 75</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2017 | 121</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2017 | 148</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2017 | 153</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2017 | 99</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2016 | 112</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2016 | 143</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2016 | 162</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2016 | 94</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2015 | 121</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2015 | 134</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2015 | 153</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2015 | 82</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2014 | 118</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2014 | 133</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2014 | 141</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2014 | 79</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2013 | 119</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2013 | 130</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2013 | 137</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2013 | 96</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2012 | 123</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2012 | 155</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2012 | 145</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2012 | 92</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2011 | 103</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2011 | 130</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2011 | 167</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2011 | 83</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2010 | 121</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2010 | 150</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2010 | 142</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2010 | 85</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2009 | 109</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2009 | 136</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2009 | 185</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2009 | 114</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2008 | 140</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2008 | 165</c>
+            </r>
+            <r>
+              <c>16 | 4/1/2008 | 192</c>
+            </r>
+            <r>
+              <c>16 | 1/1/2008 | 108</c>
+            </r>
+            <r>
+              <c>16 | 10/1/2007 | 150</c>
+            </r>
+            <r>
+              <c>16 | 7/1/2007 | 181</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2019 | 120</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2019 | 158</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2019 | 136</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2019 | 85</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2018 | 102</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2018 | 137</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2018 | 157</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2018 | 91</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2017 | 110</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2017 | 148</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2017 | 158</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2017 | 94</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2016 | 106</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2016 | 151</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2016 | 157</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2016 | 80</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2015 | 105</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2015 | 142</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2015 | 139</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2015 | 87</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2014 | 110</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2014 | 125</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2014 | 173</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2014 | 118</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2013 | 138</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2013 | 178</c>
+            </r>
+            <r>
+              <c>17 | 4/1/2013 | 188</c>
+            </r>
+            <r>
+              <c>17 | 1/1/2013 | 119</c>
+            </r>
+            <r>
+              <c>17 | 10/1/2012 | 143</c>
+            </r>
+            <r>
+              <c>17 | 7/1/2012 | 169</c>
+            </r>
+            <r>
+              <c>18 | 10/1/2019 | 114</c>
+            </r>
+            <r>
+              <c>18 | 7/1/2019 | 138</c>
+            </r>
+            <r>
+              <c>18 | 4/1/2019 | 157</c>
+            </r>
+            <r>
+              <c>18 | 1/1/2019 | 97</c>
+            </r>
+            <r>
+              <c>18 | 10/1/2018 | 119</c>
+            </r>
+            <r>
+              <c>18 | 7/1/2018 | 161</c>
+            </r>
+            <r>
+              <c>18 | 4/1/2018 | 175</c>
+            </r>
+            <r>
+              <c>18 | 1/1/2018 | 118</c>
+            </r>
+            <r>
+              <c>18 | 10/1/2017 | 140</c>
+            </r>
+            <r>
+              <c>18 | 7/1/2017 | 171</c>
+            </r>
+            <r>
+              <c>18 | 4/1/2017 | 200</c>
+            </r>
+            <r>
+              <c>18 | 1/1/2017 | 118</c>
+            </r>
+            <r>
+              <c>18 | 10/1/2016 | 143</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2019 | 125</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2019 | 144</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2019 | 158</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2019 | 81</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2018 | 118</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2018 | 131</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2018 | 161</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2018 | 106</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2017 | 112</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2017 | 134</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2017 | 144</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2017 | 95</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2016 | 120</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2016 | 123</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2016 | 149</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2016 | 95</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2015 | 114</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2015 | 132</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2015 | 143</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2015 | 100</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2014 | 119</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2014 | 143</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2014 | 157</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2014 | 89</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2013 | 113</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2013 | 129</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2013 | 142</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2013 | 86</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2012 | 123</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2012 | 133</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2012 | 160</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2012 | 91</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2011 | 108</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2011 | 124</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2011 | 130</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2011 | 84</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2010 | 144</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2010 | 166</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2010 | 198</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2010 | 94</c>
+            </r>
+            <r>
+              <c>19 | 10/1/2009 | 140</c>
+            </r>
+            <r>
+              <c>19 | 7/1/2009 | 177</c>
+            </r>
+            <r>
+              <c>19 | 4/1/2009 | 200</c>
+            </r>
+            <r>
+              <c>19 | 1/1/2009 | 121</c>
+            </r>
+            <r>
+              <c>20 | 10/1/2019 | 145</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2019 | 109</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2019 | 159</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2019 | 153</c>
+            </r>
+            <r>
+              <c>21 | 1/1/2019 | 88</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2018 | 122</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2018 | 145</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2018 | 143</c>
+            </r>
+            <r>
+              <c>21 | 1/1/2018 | 108</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2017 | 114</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2017 | 141</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2017 | 150</c>
+            </r>
+            <r>
+              <c>21 | 1/1/2017 | 98</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2016 | 112</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2016 | 143</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2016 | 145</c>
+            </r>
+            <r>
+              <c>21 | 1/1/2016 | 95</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2015 | 103</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2015 | 135</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2015 | 153</c>
+            </r>
+            <r>
+              <c>21 | 1/1/2015 | 100</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2014 | 140</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2014 | 171</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2014 | 166</c>
+            </r>
+            <r>
+              <c>21 | 1/1/2014 | 102</c>
+            </r>
+            <r>
+              <c>21 | 10/1/2013 | 132</c>
+            </r>
+            <r>
+              <c>21 | 7/1/2013 | 179</c>
+            </r>
+            <r>
+              <c>21 | 4/1/2013 | 187</c>
+            </r>
+            <r>
+              <c>22 | 10/1/2019 | 115</c>
+            </r>
+            <r>
+              <c>22 | 7/1/2019 | 151</c>
+            </r>
+            <r>
+              <c>22 | 4/1/2019 | 142</c>
+            </r>
+            <r>
+              <c>22 | 1/1/2019 | 94</c>
+            </r>
+            <r>
+              <c>22 | 10/1/2018 | 118</c>
+            </r>
+            <r>
+              <c>22 | 7/1/2018 | 146</c>
+            </r>
+            <r>
+              <c>22 | 4/1/2018 | 152</c>
+            </r>
+            <r>
+              <c>22 | 1/1/2018 | 103</c>
+            </r>
+            <r>
+              <c>22 | 10/1/2017 | 109</c>
+            </r>
+            <r>
+              <c>22 | 7/1/2017 | 162</c>
+            </r>
+            <r>
+              <c>22 | 4/1/2017 | 130</c>
+            </r>
+            <r>
+              <c>22 | 1/1/2017 | 90</c>
+            </r>
+            <r>
+              <c>22 | 10/1/2016 | 113</c>
+            </r>
+            <r>
+              <c>22 | 7/1/2016 | 138</c>
+            </r>
+            <r>
+              <c>22 | 4/1/2016 | 195</c>
+            </r>
+            <r>
+              <c>22 | 1/1/2016 | 104</c>
+            </r>
+            <r>
+              <c>22 | 10/1/2015 | 143</c>
+            </r>
+            <r>
+              <c>22 | 7/1/2015 | 167</c>
+            </r>
+            <r>
+              <c>22 | 4/1/2015 | 200</c>
+            </r>
+            <r>
+              <c>22 | 1/1/2015 | 118</c>
+            </r>
+            <r>
+              <c>22 | 10/1/2014 | 154</c>
+            </r>
+            <r>
+              <c>22 | 7/1/2014 | 194</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2019 | 110</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2019 | 164</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2019 | 147</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2019 | 96</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2018 | 121</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2018 | 157</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2018 | 158</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2018 | 93</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2017 | 130</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2017 | 150</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2017 | 157</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2017 | 86</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2016 | 105</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2016 | 140</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2016 | 145</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2016 | 96</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2015 | 112</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2015 | 138</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2015 | 168</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2015 | 90</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2014 | 108</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2014 | 159</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2014 | 150</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2014 | 87</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2013 | 129</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2013 | 158</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2013 | 152</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2013 | 94</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2012 | 118</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2012 | 148</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2012 | 149</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2012 | 96</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2011 | 111</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2011 | 137</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2011 | 144</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2011 | 86</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2010 | 115</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2010 | 151</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2010 | 159</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2010 | 75</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2009 | 120</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2009 | 148</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2009 | 167</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2009 | 75</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2008 | 124</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2008 | 147</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2008 | 150</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2008 | 98</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2007 | 140</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2007 | 153</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2007 | 181</c>
+            </r>
+            <r>
+              <c>23 | 1/1/2007 | 120</c>
+            </r>
+            <r>
+              <c>23 | 10/1/2006 | 140</c>
+            </r>
+            <r>
+              <c>23 | 7/1/2006 | 179</c>
+            </r>
+            <r>
+              <c>23 | 4/1/2006 | 180</c>
+            </r>
+            <r>
+              <c>24 | 10/1/2019 | 150</c>
+            </r>
+            <r>
+              <c>24 | 7/1/2019 | 191</c>
+            </r>
+            <r>
+              <c>24 | 4/1/2019 | 188</c>
+            </r>
+            <r>
+              <c>24 | 1/1/2019 | 116</c>
+            </r>
+            <r>
+              <c>24 | 10/1/2018 | 138</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2019 | 107</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2019 | 126</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2019 | 149</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2019 | 83</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2018 | 110</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2018 | 138</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2018 | 169</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2018 | 81</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2017 | 127</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2017 | 136</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2017 | 151</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2017 | 80</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2016 | 126</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2016 | 139</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2016 | 144</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2016 | 94</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2015 | 101</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2015 | 155</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2015 | 156</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2015 | 91</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2014 | 111</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2014 | 129</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2014 | 158</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2014 | 84</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2013 | 101</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2013 | 138</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2013 | 146</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2013 | 84</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2012 | 104</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2012 | 139</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2012 | 159</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2012 | 89</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2011 | 109</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2011 | 132</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2011 | 166</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2011 | 105</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2010 | 142</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2010 | 171</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2010 | 175</c>
+            </r>
+            <r>
+              <c>25 | 1/1/2010 | 124</c>
+            </r>
+            <r>
+              <c>25 | 10/1/2009 | 142</c>
+            </r>
+            <r>
+              <c>25 | 7/1/2009 | 177</c>
+            </r>
+            <r>
+              <c>25 | 4/1/2009 | 177</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2019 | 119</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2019 | 131</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2019 | 159</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2019 | 92</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2018 | 117</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2018 | 133</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2018 | 152</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2018 | 92</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2017 | 111</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2017 | 132</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2017 | 137</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2017 | 89</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2016 | 120</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2016 | 127</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2016 | 151</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2016 | 103</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2015 | 121</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2015 | 154</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2015 | 174</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2015 | 80</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2014 | 126</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2014 | 144</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2014 | 146</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2014 | 90</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2013 | 108</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2013 | 149</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2013 | 168</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2013 | 81</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2012 | 121</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2012 | 132</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2012 | 149</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2012 | 90</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2011 | 146</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2011 | 163</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2011 | 175</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2011 | 113</c>
+            </r>
+            <r>
+              <c>26 | 10/1/2010 | 145</c>
+            </r>
+            <r>
+              <c>26 | 7/1/2010 | 187</c>
+            </r>
+            <r>
+              <c>26 | 4/1/2010 | 179</c>
+            </r>
+            <r>
+              <c>26 | 1/1/2010 | 123</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2018 | 115</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2018 | 144</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2018 | 151</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2018 | 92</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2017 | 108</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2017 | 140</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2017 | 155</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2017 | 97</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2016 | 126</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2016 | 133</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2016 | 151</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2016 | 87</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2015 | 108</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2015 | 148</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2015 | 144</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2015 | 76</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2014 | 111</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2014 | 131</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2014 | 164</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2014 | 82</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2013 | 125</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2013 | 146</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2013 | 164</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2013 | 92</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2012 | 124</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2012 | 132</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2012 | 164</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2012 | 85</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2011 | 100</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2011 | 147</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2011 | 134</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2011 | 97</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2010 | 118</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2010 | 146</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2010 | 161</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2010 | 96</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2009 | 106</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2009 | 117</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2009 | 162</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2009 | 87</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2008 | 108</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2008 | 148</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2008 | 137</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2008 | 91</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2007 | 105</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2007 | 152</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2007 | 141</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2007 | 86</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2006 | 112</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2006 | 124</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2006 | 151</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2006 | 82</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2005 | 131</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2005 | 145</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2005 | 152</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2005 | 100</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2004 | 106</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2004 | 138</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2004 | 132</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2004 | 81</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2003 | 128</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2003 | 151</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2003 | 144</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2003 | 89</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2002 | 140</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2002 | 172</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2002 | 189</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2002 | 109</c>
+            </r>
+            <r>
+              <c>27 | 10/1/2001 | 145</c>
+            </r>
+            <r>
+              <c>27 | 7/1/2001 | 188</c>
+            </r>
+            <r>
+              <c>27 | 4/1/2001 | 175</c>
+            </r>
+            <r>
+              <c>27 | 1/1/2001 | 107</c>
+            </r>
+            <r>
+              <c>28 | 10/1/2019 | 140</c>
+            </r>
+            <r>
+              <c>28 | 7/1/2019 | 166</c>
+            </r>
+            <r>
+              <c>28 | 4/1/2019 | 196</c>
+            </r>
+            <r>
+              <c>28 | 1/1/2019 | 117</c>
+            </r>
+            <r>
+              <c>28 | 10/1/2018 | 146</c>
+            </r>
+            <r>
+              <c>29 | 10/1/2019 | 118</c>
+            </r>
+            <r>
+              <c>29 | 7/1/2019 | 117</c>
+            </r>
+            <r>
+              <c>29 | 4/1/2019 | 164</c>
+            </r>
+            <r>
+              <c>29 | 1/1/2019 | 91</c>
+            </r>
+            <r>
+              <c>29 | 10/1/2018 | 127</c>
+            </r>
+            <r>
+              <c>29 | 7/1/2018 | 126</c>
+            </r>
+            <r>
+              <c>29 | 4/1/2018 | 139</c>
+            </r>
+            <r>
+              <c>29 | 1/1/2018 | 88</c>
+            </r>
+            <r>
+              <c>29 | 10/1/2017 | 126</c>
+            </r>
+            <r>
+              <c>29 | 7/1/2017 | 135</c>
+            </r>
+            <r>
+              <c>29 | 4/1/2017 | 140</c>
+            </r>
+            <r>
+              <c>29 | 1/1/2017 | 86</c>
+            </r>
+            <r>
+              <c>29 | 10/1/2016 | 105</c>
+            </r>
+            <r>
+              <c>29 | 7/1/2016 | 145</c>
+            </r>
+            <r>
+              <c>29 | 4/1/2016 | 147</c>
+            </r>
+            <r>
+              <c>29 | 1/1/2016 | 96</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Contracts</AnnotationText>
+          <DefaultAnnotationText>Contracts</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="20" />
+          <Fields>
+            <Field name="Year" />
+            <Field name="Quarterly Premium" />
+            <Field name="Per Unit Fee for Customers" />
+            <Field name="Per Unit Production Cost" />
+          </Fields>
+          <Data>
+            <r>
+              <c>2000</c>
+              <c>600</c>
+              <c>0.5</c>
+              <c>1</c>
+            </r>
+            <r>
+              <c>2001</c>
+              <c>625</c>
+              <c>0.65</c>
+              <c>1.3</c>
+            </r>
+            <r>
+              <c>2002</c>
+              <c>650</c>
+              <c>0.71</c>
+              <c>1.42</c>
+            </r>
+            <r>
+              <c>2003</c>
+              <c>675</c>
+              <c>0.8</c>
+              <c>1.6</c>
+            </r>
+            <r>
+              <c>2004</c>
+              <c>700</c>
+              <c>0.95</c>
+              <c>1.9</c>
+            </r>
+            <r>
+              <c>2005</c>
+              <c>725</c>
+              <c>1.07</c>
+              <c>2.14</c>
+            </r>
+            <r>
+              <c>2006</c>
+              <c>750</c>
+              <c>1.15</c>
+              <c>2.3</c>
+            </r>
+            <r>
+              <c>2007</c>
+              <c>775</c>
+              <c>1.29</c>
+              <c>2.58</c>
+            </r>
+            <r>
+              <c>2008</c>
+              <c>800</c>
+              <c>1.42</c>
+              <c>2.84</c>
+            </r>
+            <r>
+              <c>2009</c>
+              <c>825</c>
+              <c>1.55</c>
+              <c>3.1</c>
+            </r>
+            <r>
+              <c>2010</c>
+              <c>850</c>
+              <c>1.63</c>
+              <c>3.26</c>
+            </r>
+            <r>
+              <c>2011</c>
+              <c>875</c>
+              <c>1.78</c>
+              <c>3.56</c>
+            </r>
+            <r>
+              <c>2012</c>
+              <c>900</c>
+              <c>1.84</c>
+              <c>3.68</c>
+            </r>
+            <r>
+              <c>2013</c>
+              <c>925</c>
+              <c>1.92</c>
+              <c>3.84</c>
+            </r>
+            <r>
+              <c>2014</c>
+              <c>950</c>
+              <c>2</c>
+              <c>4</c>
+            </r>
+            <r>
+              <c>2015</c>
+              <c>975</c>
+              <c>2.13</c>
+              <c>4.26</c>
+            </r>
+            <r>
+              <c>2016</c>
+              <c>1000</c>
+              <c>2.27</c>
+              <c>4.54</c>
+            </r>
+            <r>
+              <c>2017</c>
+              <c>1025</c>
+              <c>2.33</c>
+              <c>4.66</c>
+            </r>
+            <r>
+              <c>2018</c>
+              <c>1050</c>
+              <c>2.4</c>
+              <c>4.8</c>
+            </r>
+            <r>
+              <c>2019</c>
+              <c>1075</c>
+              <c>2.54</c>
+              <c>5.08</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Costs</AnnotationText>
+          <DefaultAnnotationText>Costs</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1266" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\phuon\AppData\Local\Temp\Engine_17324_7f8ead72e2a6498b9accf2d1ba739d2d_\Engine_33096_895b2a5e1a544707aa30e1793b0cb4eb_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1038" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\phuon\AppData\Local\Temp\Engine_17324_7f8ead72e2a6498b9accf2d1ba739d2d_\Engine_33096_4efe41896ab440538751e561a33b44ea_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="8" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="8" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Join" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="15" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output26" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Challenge #196 Determine Profit Margin</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="4fa8ed7d-fef9-421d-b320-bdbbe112dd12" />
+      <Telemetry>
+        <PreviousWorkflowId value="" />
+        <OriginWorkflowId value="4fa8ed7d-fef9-421d-b320-bdbbe112dd12" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
